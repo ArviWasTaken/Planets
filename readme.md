@@ -8,3 +8,6 @@ Computing and data exchange are preferably done client side in browser, if that 
 
 Inspired by this post:
 https://www.instagram.com/p/Cz827m0tYy1/
+
+MVP:
+A galaxy on a webpage with rockets flying between them in straight lines
