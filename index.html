@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <title>Planets!</title>
 </head>
-<body style="display: flex; margin: 0; height: 100vh; align-items: center; justify-content: center">
-    <div style="background-color: dodgerblue; height: 500px; width: 500px; border-radius: 100%">
-    </div>
+<body style=" margin: 0; height: 100vh; background-color: darkslateblue">
 </body>
+<script>
+    // Create two planets random on page
+
+    let p1 = document.body.appendChild(createPlanet());
+    let p2 = document.body.appendChild(createPlanet());
+
+    function createPlanet() {
+        let planet = document.createElement("div");
+
+        //styling
+        let planetStyle = planet.style;
+        planetStyle.position = "fixed";
+        planetStyle.backgroundColor = "red";
+        planetStyle.height = randomInteger(50, 150) + "px";
+        planetStyle.width = planetStyle.height;
+        planetStyle.left = randomInteger(10, 90) + "%";
+        planetStyle.top = randomInteger(10, 90) + "%";
+        planetStyle.borderRadius = "100%";
+
+        return planet
+    }
+
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+</script>
 </html>
