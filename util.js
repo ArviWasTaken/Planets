@@ -8,3 +8,7 @@ function findObjectCentre(planet) {
     let y = planetBound.y + (planetBound.height / 2);
     return {x, y};
 }
+
+function findAngleBetweenPoints(pointA, pointB) {
+    return Math.atan((pointB.y - pointA.y) / (pointB.x - pointA.x)) * (180/Math.PI);
+}

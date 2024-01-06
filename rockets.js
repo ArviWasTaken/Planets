@@ -3,7 +3,7 @@ function createRocket(planetOfOrigin, destinationPlanet) {
 
     //styling
     rocket.style.position = "fixed";
-    rocket.style.height = "10px";
+    rocket.style.height = "25px";
     rocket.style.width = "10px";
     rocket.style.backgroundColor = "red";
 
@@ -12,6 +12,12 @@ function createRocket(planetOfOrigin, destinationPlanet) {
 
     rocket.style.left = planetBound.x + (planetBound.width / 2) - rocketBound.width + "px";
     rocket.style.top = planetBound.y + (planetBound.width / 2) - rocketBound.height + "px";
+
+
+
+    document.body.appendChild(rocket);
+
+    animateStraightLine(destinationPlanet, rocket);
 
     return rocket;
 }
