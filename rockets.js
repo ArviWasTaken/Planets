@@ -7,8 +7,11 @@ function createRocket(planetOfOrigin, destinationPlanet) {
     rocket.style.width = "10px";
     rocket.style.backgroundColor = "red";
 
-    rocket.style.left = planetOfOrigin.getBoundingClientRect().x + (planetOfOrigin.getBoundingClientRect().width / 2) - rocket.getBoundingClientRect().width + "px";
-    rocket.style.top = planetOfOrigin.getBoundingClientRect().y + (planetOfOrigin.getBoundingClientRect().width / 2) - rocket.getBoundingClientRect().height + "px";
+    rocketBound = rocket.getBoundingClientRect();
+    planetBound = planetOfOrigin.getBoundingClientRect();
+
+    rocket.style.left = planetBound.x + (planetBound.width / 2) - rocketBound.width + "px";
+    rocket.style.top = planetBound.y + (planetBound.width / 2) - rocketBound.height + "px";
 
     return rocket;
 }

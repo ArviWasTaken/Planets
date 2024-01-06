@@ -12,6 +12,6 @@ function createPlanet() {
     planet.style.backgroundColor = "indianred";
     planet.style.borderRadius = "100%";
 
-
     return planet
 }
+

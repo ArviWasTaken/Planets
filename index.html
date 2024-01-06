@@ -6,6 +6,7 @@
     <script type="text/javascript" src="planets.js"></script>
     <script type="text/javascript" src="rockets.js"></script>
     <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="animations.js"></script>
 </head>
 <body style=" margin: 0; height: 100vh; background-color: darkslateblue">
 </body>
@@ -16,75 +17,8 @@
 
     let rocket = document.body.appendChild(createRocket(p1));
 
-    rocketStraightFly(p2, rocket);
+    animateStraightLine(p2, rocket);
 
-    function rocketStraightFly(destinationPlanet, rocket) {
-        let RocketIsLowerThenDestinationCompletionCondition = (rocket, destination) => rocket > destination;
-        let RocketIsHigherThenDestinationCompletionCondition = (rocket, destination) =>  rocket < destination;
 
-        let rocketStartBound = rocket.getBoundingClientRect();
-        let destinationBound = destinationPlanet.getBoundingClientRect()
-
-        let rocketStartX = rocketStartBound.x;
-        let rocketStartY = rocketStartBound.y;
-
-        // calculate relative stepsize
-        // get x distance and y distance
-        let xDistance = Math.max(rocketStartX, destinationBound.x) - Math.min(rocketStartX, destinationBound.x);
-        let yDistance = Math.max(rocketStartY, destinationBound.y) - Math.min(rocketStartY, destinationBound.y);
-
-        let xStepSize;
-        let yStepSize;
-
-        if (xDistance < yDistance) {
-            xStepSize = 1;
-            yStepSize = yDistance / xDistance;
-        } else {
-            xStepSize = xDistance / yDistance;
-            yStepSize = 1;
-        }
-
-        let xEval;
-        let yEval;
-
-        if (destinationBound.x < rocketStartX) {
-            xStepSize *= -1;
-            xEval = RocketIsHigherThenDestinationCompletionCondition;
-        } else {
-            xStepSize *= 1;
-            xEval = RocketIsLowerThenDestinationCompletionCondition;
-        }
-
-        if (destinationBound.y < rocketStartY) {
-            yStepSize *= -1
-            yEval = RocketIsHigherThenDestinationCompletionCondition
-        } else {
-            yStepSize *= 1;
-            yEval = RocketIsLowerThenDestinationCompletionCondition;
-        }
-
-        console.log("X: ", xStepSize, xDistance);
-        console.log("Y: ", yStepSize, yDistance);
-
-        let id = setInterval(frame, 5);
-        let xStepCount = 0;
-        let yStepCount = 0;
-
-        function frame() {
-            let currentRocketBound = rocket.getBoundingClientRect();
-
-            if (xEval(currentRocketBound.x, destinationBound.x) && yEval(currentRocketBound.y, destinationBound.y)) {
-                clearInterval(id);
-            } else {
-                // add stepsize to each dimension
-                xStepCount += 1;
-                yStepCount += 1;
-
-                // Update position of the rocket
-                rocket.style.left = rocketStartX + xStepSize * xStepCount + 'px';
-                rocket.style.top = rocketStartY + yStepSize * yStepCount + 'px';
-            }
-        }
-    }
 </script>
 </html>
