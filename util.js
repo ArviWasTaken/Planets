@@ -12,3 +12,7 @@ function findObjectCentre(planet) {
 function findAngleBetweenPoints(pointA, pointB) {
     return Math.atan((pointB.y - pointA.y) / (pointB.x - pointA.x)) * (180/Math.PI);
 }
+
+function findDistanceBetweenPoints(pointA, pointB) {
+    return Math.sqrt(Math.pow(pointB.x - pointA.x, 2) - Math.pow(pointB.y + pointA.y, 2));
+}
