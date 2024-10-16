@@ -1,12 +1,20 @@
 {
   "name": "planets",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A website where every window you open from it has a planet in the centre. Rockets will travel from planet to planet and get accurate paths and timing between the actual distance between planets",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Arvid Smit",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArviWasTaken/Planets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArviWasTaken/Planets/issues"
+  },
+  "homepage": "https://github.com/ArviWasTaken/Planets#readme"
 }

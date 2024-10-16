@@ -10,6 +10,10 @@ function animateStraightLine(destinationPlanet, rocket) {
     let destinationCentre = findObjectCentre(destinationPlanet);
     let rocketCentre = findObjectCentre(rocket)
 
+    // console.log(findAngleBetweenPoints({x: rocketCentre.x, y: rocketCentre.y}, {x: destinationCentre.x, y: destinationCentre.y}) + "deg")
+    // set initial rotation
+    rocket.style.rotate = findAngleBetweenPoints({x: rocketCentre.x, y: rocketCentre.y}, {x: destinationCentre.x, y: destinationCentre.y}) + 90 + "deg";
+
     // calculate relative stepsize
     // get x distance and y distance
     let xDistance = Math.max(rocketCentre.x, destinationCentre.x) - Math.min(rocketCentre.x, destinationCentre.x);
@@ -45,9 +49,6 @@ function animateStraightLine(destinationPlanet, rocket) {
         yStepSize *= 1;
         yEval = RocketIsLowerThenDestinationCompletionCondition;
     }
-
-    console.log("X: ", xStepSize, xDistance);
-    console.log("Y: ", yStepSize, yDistance);
 
     let id = setInterval(frame, 5);
     let xStepCount = 0;

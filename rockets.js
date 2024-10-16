@@ -7,13 +7,15 @@ function createRocket(planetOfOrigin, destinationPlanet) {
     rocket.style.width = "10px";
     rocket.style.backgroundColor = "red";
 
+    rocket.style.borderTop = "2px";
+    rocket.style.borderTopColor = "black";
+    rocket.style.borderTopStyle = "solid";
+
     rocketBound = rocket.getBoundingClientRect();
     planetBound = planetOfOrigin.getBoundingClientRect();
 
     rocket.style.left = planetBound.x + (planetBound.width / 2) - rocketBound.width + "px";
-    rocket.style.top = planetBound.y + (planetBound.width / 2) - rocketBound.height + "px";
-
-
+    rocket.style.top = planetBound.y + (planetBound.height / 2) - rocketBound.height + "px";
 
     document.body.appendChild(rocket);
 

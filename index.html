@@ -14,8 +14,13 @@
     // Create two planets random on page
     let p1 = document.body.appendChild(createPlanet());
     let p2 = document.body.appendChild(createPlanet());
-
-    let rocket = createRocket(p1, p2);
+    let p3 = document.body.appendChild(createPlanet());
+    let p4 = document.body.appendChild(createPlanet());
+    let p5 = document.body.appendChild(createPlanet());
+    let p6 = document.body.appendChild(createPlanet());
+    let rocket1 = createRocket(p1, p2);
+    let rocket2 = createRocket(p1, p4);
+    let rocket3 = createRocket(p3, p6);
 
     // animateStraightLine(p2, rocket);
 
