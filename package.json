@@ -4,7 +4,8 @@
   "description": "A website where every window you open from it has a planet in the centre. Rockets will travel from planet to planet and get accurate paths and timing between the actual distance between planets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "npx tsc"
   },
   "keywords": [],
   "author": "Arvid Smit",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ArviWasTaken/Planets/issues"
   },
-  "homepage": "https://github.com/ArviWasTaken/Planets#readme"
+  "homepage": "https://github.com/ArviWasTaken/Planets#readme",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
 }
